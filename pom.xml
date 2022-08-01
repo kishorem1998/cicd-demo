@@ -15,8 +15,9 @@
 
 		<app.runtime>4.4.0-20211227</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
+		
 	</properties>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -29,6 +30,23 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+<cloudHubDeployment>
+				
+				<uri>https://anypoint.mulesoft.com</uri>
+				<muleVersion>${mule.version}</muleVersion>
+				
+				<username>${anypoint.user}</username>
+				<password>${anypoint.password}</password>
+				
+				<environment>${env}</environment>
+				<applicationName>${appName}</applicationName>
+				<workers>${workers}</workers>
+				<workerType>${workerType}</workerType>
+				<objectStoreV2>true</objectStoreV2>
+				
+				</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
